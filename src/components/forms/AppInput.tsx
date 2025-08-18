@@ -26,7 +26,9 @@ const AppInput = forwardRef<HTMLInputElement, IAppInputProps>(
                     />
                 </div>
                 {meta.touched && meta.error ? (
-                    <div className="text-Redish-500 text-xs font-bold">{meta.error}</div>
+                    <div className="text-Redish-500 text-xs font-bold">
+                        {meta.error}
+                    </div>
                 ) : null}
             </div>
         );
