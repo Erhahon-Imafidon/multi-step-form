@@ -1,6 +1,7 @@
 import { Formik, Form, } from 'formik';
 import * as Yup from 'yup';
 import AppInput from './AppInput.tsx';
+import AppButton from '../AppButton.tsx';
 
 type IPersonalInfoProps = {
     name: string;
@@ -39,12 +40,20 @@ const PersonalInfo = () => {
             {/*FORMS*/}
             <Formik initialValues={initialValues} onSubmit={() => {}} validationSchema={validationSchema}>
                 {({values, isSubmitting}) => (
-                    <Form className='flex flex-col gap-y-5'>
+                    <Form className='flex flex-col'>
+                        <div className='flex flex-col gap-y-5'>
+
                         <AppInput label='Name' name='name' id='name' type='text' value={values.name} placeholder='e.g. Stephen King' />
                         <AppInput label='Email Address' name='email' id='email' type='email' value={values.email} placeholder='e.g. stephenking@lorem.com' />
                         <AppInput label='Phone Number' name='phone' id='phone' type='text' value={values.phone} placeholder='e.g. +1 234 567 890' />
+                        </div>
 
-                        <button disabled={isSubmitting}>{isSubmitting ? 'loading' : 'Next'}</button>
+
+                        <div className='self-end mt-40'>
+                        <AppButton disabled={isSubmitting}>
+                            <span>{isSubmitting ? 'loading' : 'Next Step'}</span>
+                        </AppButton>
+                        </div>
                     </Form>
                 )}
             </Formik>
