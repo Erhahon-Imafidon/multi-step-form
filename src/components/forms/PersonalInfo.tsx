@@ -42,7 +42,7 @@ const PersonalInfo = () => {
                     <Form className='flex flex-col gap-y-5'>
                         <AppInput label='Name' name='name' id='name' type='text' value={values.name} placeholder='e.g. Stephen King' />
                         <AppInput label='Email Address' name='email' id='email' type='email' value={values.email} placeholder='e.g. stephenking@lorem.com' />
-                        <AppInput label='Phone Number' name='phone-number' id='phone-number' type='text' value={values.phone} placeholder='e.g. +1 234 567 890' />
+                        <AppInput label='Phone Number' name='phone' id='phone' type='text' value={values.phone} placeholder='e.g. +1 234 567 890' />
 
                         <button disabled={isSubmitting}>{isSubmitting ? 'loading' : 'Next'}</button>
                     </Form>
